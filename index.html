@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para ti la chica que cambio mi mundo entero 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🎶 Música -->
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="pop">
+        <source src="pop.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="btnMusica" onclick="toggleMusica()">🎵 Música</button>
+
+    <!-- 💌 INICIO -->
+    <section class="pantalla activa" id="inicio">
+        <h1>Para la dueña de mi corazón y de todas mis alegrias 💘</h1>
+        <p>Hice esto solo para ti mi colaton…</p>
+        <p>Para una mejor experiencia presione el boton musica …</p>
+        <button onclick="mostrarSeccion('poema'); escribirPoema();">
+            Empezar 💖
+        </button>
+    </section>
+
+    <!-- 📝 POEMA -->
+    <section class="pantalla" id="poema">
+        <h2>Un poema para ti</h2>
+        <div id="texto-poema" class="carta-poema"></div>
+        <button onclick="mostrarSeccion('lista')">Siguiente 💕</button>
+    </section>
+
+    <!-- 💕 LISTA -->
+    <section class="pantalla" id="lista">
+        <h2>10 cosas que amo de ti </h2>
+        <h3>Puedes presionar todas amor, y te saldra un mensajito lindo 😳  </h3>
+        <ul>
+            <li onclick="mostrarTexto(this, 'Tu sonrisa ilumina todo ✨')">Tu sonrisa</li>
+            <li onclick="mostrarTexto(this, 'Tu forma de hablar me calma 💕')">Tu forma de hablar</li>
+            <li onclick="mostrarTexto(this, 'Amo lo honesta que eres 💖')">Tu sinceridad</li>
+            <li onclick="mostrarTexto(this, 'Tu ternura me desarma 🥹')">Tu ternura</li>
+            <li onclick="mostrarTexto(this, 'Tu risa es mi sonido favorito 😍')">Tu risa</li>
+            <li onclick="mostrarTexto(this, 'Tu locura combina con la mía 😆')">Tu locura</li>
+            <li onclick="mostrarTexto(this, 'Gracias por siempre apoyarme 💘')">Tu apoyo</li>
+            <li onclick="mostrarTexto(this, 'Tu paciencia conmigo vale oro ✨')">Tu paciencia</li>
+            <li onclick="mostrarTexto(this, 'Tu mirada me pierde 😳')">Tu mirada</li>
+            <li onclick="mostrarTexto(this, 'Todo de ti me encanta ❤️')">Todo de ti 💖</li>
+        </ul>
+        <button onclick="mostrarSeccion('pantalla-pregunta')">
+            Siguiente 😏
+        </button>
+    </section>
+
+    <!-- 😈 PREGUNTA -->
+    <section class="pantalla" id="pantalla-pregunta">
+        <h2>Pregunta importante 😳</h2>
+        <p>¿Quieres darme besos y abrazos infinitos?</p>
+        <p>Juega con el boton "No" para ver lo que pasa 😈</p>
+        <button id="si">Sí 💘</button>
+        <button id="no">No 😈</button>
+    </section>
+
+    <div id="mensajeFinal" class="mensaje-final oculto">
+  <div class="mensaje-contenido">
+    <h2>💖 Decisión tomada 💖</h2>
+    <p>
+      Has aceptado besos espontáneos,<br>
+      abrazos interminables<br>
+      y sonrisas sin razón 😌
+    </p>
+    <p class="extra">
+      No hay marcha atrás…<br>
+      y sinceramente,<br>
+      no querrías volver 💞
+    </p>
+
+    <button id="continuarQuiz">Continuar 😳💖</button>
+    </div>
+    </div>
+
+
+    <!-- 🧠 QUIZ -->
+    <section class="pantalla" id="quiz">
+        <h2 id="preguntaTexto"></h2>
+        <div id="opciones"></div>
+        <p id="resultadoQuiz"></p>
+        <button onclick="siguientePregunta()">Siguiente ➡️</button>
+    </section>
+
+    <!-- 💖 JUEGO CORAZÓN -->
+    <section class="pantalla" id="juego-corazon">
+        <h2>Encuentra mi corazón amor 💖</h2>
+        <h4>Juega con los corazones rotos jijiji 💔 </h4>
+        <div class="cartas">
+            <div class="carta" onclick="corazon(this)">💔</div>
+            <div class="carta" onclick="corazon(this)">💔</div>
+            <div class="carta" onclick="corazon(this)">💖</div>
+            <div class="carta" onclick="corazon(this)">💔</div>
+            <div class="carta" onclick="corazon(this)">💔</div>
+            <div class="carta" onclick="corazon(this)">💔</div>
+        </div>
+        <p id="mensajeCorazon"></p>
+        <button onclick="mostrarSeccion('final')">Final 💍</button>
+    </section>
+
+            <!-- 💌 MODAL BONITO -->
+        <div id="modal-romantico" class="modal oculto">
+            <div class="modal-contenido">
+                <h2>💖</h2>
+                <p id="mensajeModal">Esto me encanta de ti ❤️</p>
+                <button onclick="cerrarModal()">Aceptar 💕</button>
+            </div>
+        </div>
+
+    <section class="pantalla" id="final">
+    <h1>Gracias por existir 💖</h1>
+    <p>Esto solo es una pequeña parte de lo que siento por ti.</p>
+    <p>Me siento la persona más afortunada del mundo por tenerte.</p>
+
+    <button onclick="mostrarSeccion('foto-final')">
+        Ver algo especial 📸💖
+    </button>
+</section>
+
+<!-- 📸 FOTO FINAL -->
+<section class="pantalla" id="foto-final">
+    <h2>Un último recuerdo 💞</h2>
+
+    <div class="marco-foto">
+        <img src="foto.jpg" alt="Nosotros 💖" class="foto-final">
+    </div>
+
+    <p class="nota">
+        Gracias por llegar hasta aquí.<br>
+        Esto también es parte de nuestra historia ✨
+    </p>
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
